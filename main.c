@@ -1,15 +1,19 @@
 // 07주차 프로그래밍 실습
 #include <stdio.h>
 
-// 실습02
-int main(void) {
-    int i;
+// 실습03
+int inc(int counter);
 
-    for (i = 1; i < 5; i++) {
-        int temp = 1;
-        printf("temp = %d\n", temp);
-        temp++;
-    }
+int main(void) {
+    int i = 10;
+    printf("함수 호출전 i=%d\n", i);
+    i = inc(i); // 함수 호출 결과 저장 필요
+    printf("함수 호출후 i=%d\n", i);
     
     return 0;
+}
+
+int inc(int counter) {
+    counter++;
+    return counter;
 }
