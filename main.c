@@ -1,30 +1,22 @@
 // 07주차 프로그래밍 실습
 #include <stdio.h>
 
-// 실습04
-// int counter;
+// 실습05
+void sub(void);
 
-// void set_counter() {
-//     counter = 20;
-// }
-// int main(void) {
-//     printf("counter=%d\n", counter);
-//     set_counter();
-//     printf("counter=%d\n", counter);
-//     return 0;
-// }
-
-void f(void);
-
-int i; // i = 0 초기값 , 하단의 반복분 돌며 i = 10 으로 재설정된 값 그대로 유지  
 int main(void) {
-    for (i=0; i<5; i++) {
-        f();
-    } // i = 10 이므로 for문 안돌음
+    int i;
+    for (i=0; i<3; i++)
+        sub();
     return 0;
 }
 
-void f(void) {
-    for (i=0; i<10; i++)
-    printf("#");
+void sub(void) {
+    int auto_count = 0;
+    static int static_count = 0; // 변수 생성시에만 0으로 초기화
+    auto_count++; // 함수 끝나면 소멸 --> 저장X
+    static_count++;
+
+    printf("auto_count=%d\n", auto_count);
+    printf("static_count=%d\n", static_count);
 }
